@@ -1,0 +1,45 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'May 2023 — Today',
+        title: 'Sr. Unity Developer – 3dar',
+        description: 'Working on EGGSCAPE, a multiplayer VR Mix-Reality game for latest Meta headsets. Gameplay, backend, internal editor tools, ECS, optimization, leading one of the two devs teams.',
+        link: 'https://www.eggscape.com/'
+    },
+    {
+        date: 'July 2020 — March 2023',
+        title: 'Unity Developer – Patch Notes',
+        description: 'Working on Oprør, a multiplayer autochess play-to-earn free-to-play with deck building. Gameplay, UI, internal editor tools, reactive programming, complex systems and code review.',
+        link: 'https://www.opror.io/'
+    },
+    {
+        date: '2019 — 2020',
+        title: 'Freelance Unity Developer',
+        description: 'Working on some mobile games and tasks on a cards collector clicker and porting a Tower Defense from iOS on swift to android using Unity.'
+    },
+    {
+        date: '2019 — 2020',
+        title: 'Freelance translations',
+        description: 'English to spanish translation of a british mistery novel and some formal documents.'
+    }
+]
+---
+
+
+<div class="text-center mb-8 lg:mb-10">
+    <h2 class="mb-8 text-4xl tracking-tighter font-bold text-white">
+        Experience
+    </h2>
+    
+    <ol class="relative text-left border-s ml-20 lg:ml-56 mr-5 lg:mr-56 mt-5 border-gray-200 dark:border-gray-700">
+        {
+            EXPERIENCE.map(exp => (
+                <li class="mb-10 ms-4 flex-initial">
+                    <ExperienceItem {...exp}/>
+                </li>
+            ))
+        }
+    </ol>
+</div>

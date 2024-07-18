@@ -1,0 +1,27 @@
+---
+interface Props{
+    date: string,
+    title: string,
+    description: string,
+    link?: string,
+}
+const { title, description, date, link } = Astro.props
+---
+
+<div class="relative size-3 bg-gray-900 rounded-full mt-1.5 -start-[1.4rem] border border-gray-300 border-x-2 border-y-2">
+</div>
+<time class="mb-1 text-sm font-thin leading-none text-gray-300">
+    {date}
+</time>
+<h3 class="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-500 to-orange-600">
+    {title}
+</h3>
+<p class="mb-4 mx-5 text-base font-normal text-pretty text-gray-500/80">
+    {description}
+</p>
+{
+    link && (
+    <div class="flex w-52 h-8 mx-5 rounded-full bg-gradient-to-tr from-rose-500/80 to-red-400/80 p-[0.1rem] shadow-lg shadow-black/0 transition-all duration-200 ease-in-out hover:shadow-black/60">
+        <a href={link} target="_blank" class="flex-1 font-medium text-left text-[0.85rem] text-gray-200/90 bg-gray-950/75 px-2 py-1 rounded-full transition-all duration-200 ease-in-out hover:bg-black/0 hover:text-black hover:font-bold hover:text-[0.9rem] hover:py-1">Visit website</a>
+    </div>)
+}

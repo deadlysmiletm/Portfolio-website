@@ -1,0 +1,96 @@
+---
+import CardImage from "./CardImage.astro";
+import GithubIcon from "./Icons/GithubIcon.astro";
+import ItchIoIcon from "./Icons/ItchIoIcon.astro";
+import LinkedInIcon from "./Icons/LinkedInIcon.astro";
+import MailIcon from "./Icons/MailIcon.astro";
+import SectionContainer from "./SectionContainer.astro";
+
+interface Platform {
+    name: string;
+    icon: any;
+}
+
+interface Props {
+    imagePath: string;
+    videoPath?: string;
+    date: string;
+    title: string;
+    company: string;
+    description: string;
+    longDescription: string;
+    contribution: string;
+    link: string;
+    platforms?: Array<Platform>;
+    game_links: Array<Platform>;
+    url: string[];
+}
+
+const { title, date, company, longDescription, contribution, imagePath, videoPath, link, platforms, game_links, url } = Astro.props;
+---
+
+<SectionContainer id={link.replace("#", "")}>
+    <article class="px-4 w-full mx-auto lg:px-6 text-center mb-8 lg:mb-10">
+        <h3 class="mb-1 text-4xl tracking-tighter font-bold text-white">
+            {title}
+        </h3>
+        <h4 class="mb-1 text-xl tracking-tighter font-thin text-gray-400">
+            {company}
+        </h4>
+        <h5 class="mb-8 text-medium tracking-tighter font-extralight text-gray-500">
+            {date}
+        </h5>
+        <div
+            class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-2 justify-items-center justify-center gap-x-20 mt-10 mb-10">
+            {            
+                videoPath ? (
+                    <div project-video class="w-[32rem] h-80 mt-10 mb-5">
+                     <iframe
+                      width="100%" height="100%"
+                      src={videoPath} title="Project video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                      loading="lazy" 
+                      class="rounded-xl"></iframe>
+                    </div>) :
+                    (
+                        <div project-cover class="w-[32rem] h-80 mt-10 -mb-16">
+                            <CardImage imagePath={imagePath} title={title} width="32rem" height="20rem"/>
+                        </div>
+                    )
+            }
+
+            <div description-project class="my-10">
+                <div class="flex flex-col w-full justify-items-center mt-5">
+                    <nav class="flex flex-row gap-x-5 opacity-80 justify-center">
+                    {
+                        platforms?.map(p => 
+                            <div class="scale-110">
+                                <p.icon/>
+                                <span class="font-mono text-gray-400 text-sm">{p.name}</span>
+                            </div>
+                        )
+                    }
+                    </nav>
+                </div>
+                <p class="text-left text-pretty pt-5 text-sm">{longDescription}</p>
+                <p class="text-left text-pretty pt-5 text-[0.9rem]">{contribution}</p>
+                <div game-links class="pt-5">
+                    <ul class="flex flex-row gap-x-5 justify-center mb-8 pt-5 lg:mb-12">
+                    {
+                        game_links?.map((link, i) => 
+                        <li class="scale-110">
+                            <a href={url[i]} target="_blanck" title={link.name}>
+                                <link.icon/>
+                            </a>
+                        </li>
+                    )}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <span class="flex -mt-12 mx-auto w-64 h-10 rounded-full bg-gradient-to-tr from-rose-700/80 to-red-500/80 p-[0.1rem] shadow-lg shadow-black/0 transition-all duration-200 ease-in-out hover:shadow-black/60">
+            <a href=#projects class="flex-1 font-medium text-center text-[1rem] text-gray-100/95 bg-gray-950/75 py-[0.30rem] rounded-full transition-all duration-200 ease-in-out hover:bg-black/0 hover:text-black/90 hover:font-bold hover:text-[1.02rem] hover:py-1">Return to Projects</a>
+        </span>
+    </article>
+</SectionContainer>

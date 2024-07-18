@@ -1,0 +1,273 @@
+---
+import AndroidIcon from "../components/Icons/AndroidIcon.astro"
+import BrowserIcon from "../components/Icons/BrowserIcon.astro"
+import GithubIcon from "../components/Icons/GithubIcon.astro"
+import ItchIoIcon from "../components/Icons/ItchIoIcon.astro"
+import LinuxIcon from "../components/Icons/LinuxIcon.astro"
+import MacIcon from "../components/Icons/MacIcon.astro"
+import MetaIcon from "../components/Icons/MetaIcon.astro"
+import UnityIcon from "../components/Icons/UnityIcon.astro"
+import UnityInteractableIcon from "../components/Icons/UnityInteractableIcon.astro"
+import WebGLIcon from "../components/Icons/WebGLIcon.astro"
+import WindowsIcon from "../components/Icons/WindowsIcon.astro"
+import ProjectArticle from "../components/ProjectArticle.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+import SectionDivider from "../components/SectionDivider.astro"
+
+const PLATFORMS = {
+    META: {
+        name: "Meta Quest",
+        icon: MetaIcon,
+    },
+    WINDOWS: {
+        name: "Windows",
+        icon: WindowsIcon,
+    },
+    LINUX: {
+        name: "Linux",
+        icon: LinuxIcon,
+    },
+    MAC: {
+        name: "Mac",
+        icon: MacIcon,
+    },
+    ANDROID: {
+        name: "Android",
+        icon: AndroidIcon,
+    },
+    WEBGL: {
+        name: "WebGL",
+        icon: WebGLIcon,
+    },
+    UNITY: {
+        name: "Unity",
+        icon: UnityIcon,
+    }
+}
+
+const GAME_LINKS = {
+    GITHUB: {
+        name: "Github",
+        icon: GithubIcon,
+    },
+    ITCH_IO:{
+        name: "Itch.io",
+        icon: ItchIoIcon,
+    },
+    WEBSITE: {
+        name: "Website",
+        icon: BrowserIcon,
+    },
+    ASSET_STORE: {
+        name: "Unity Assetstore",
+        icon: UnityInteractableIcon,
+    }
+}
+
+
+const PROJECT = [
+    {
+        imagePath: "/public/Projects/Libraries/build-wizard.webp",
+        date: "2024 — Today",
+        width: 491,
+        height: 357,
+        title: "Build Wizard",
+        company: "C# Library",
+        description: "Open-source, easy to use Unity Extension tool for build steps automatization.",
+        longDescription: "Build Wizard is an open-source, easy-to-use, and extendable Unity editor tool, still in development. It is optimized for automating the building process and even deploying directly from Unity. Internally, it works with a modular architecture, making it very easy to extend without the need to edit existing code.",
+        contribution: "Originally planned to be sold on the Asset Store, I ultimately decided to make it open-source to showcase my current skills with more recent code.",
+        link: "#build-wizard",
+        platforms: [PLATFORMS.UNITY],
+        game_links: [GAME_LINKS.GITHUB],
+        url: ["https://github.com/deadlysmiletm/BuildWizard"],
+    },
+    {
+        imagePath: "/public/Projects/Eggscape/Eggscape.webp",
+        videoPath: "https://www.youtube-nocookie.com/embed/kZ1tN_nLR5w?si=ERG3Rc70Ww2xUpc_",
+        date: "2023 — Today",
+        width: 1000,
+        height: 667,
+        title: "EGGSCAPE",
+        company: "3Dar",
+        description: "Online Multiplayer Mixed Reality platformer with a spatial World Building for Meta Quest.",
+        longDescription: "Eggscape is an upcoming online multiplayer Mixed Reality game for the latest Oculus headset. It was presented at GDC 2024 at the Meta booth, with a regular stand for the location-based version in China. This ambitious project has undergone many vision changes but consistently showcases great creativity and a talented team behind it.",
+        contribution: "I worked on implementing various gameplay features and complex systems, refactoring code, backend and frontend programming. I also developed custom Unity editor tools, including a builder tool with automatic Meta channel deployment (adapting a personal tool), and led one of the two developer teams.",
+        link: "#eggscape",
+        platforms: [PLATFORMS.META],
+        game_links: [GAME_LINKS.WEBSITE],
+        url: ["https://www.eggscape.com/"],
+    },
+    {
+        imagePath: "/public/Projects/Opror/OprorLogo.webp",
+        videoPath: "https://www.youtube-nocookie.com/embed/8GIogqK1Xao?si=6GCSZcpWU4Zru2xV",
+        date: "2020 — 2023",
+        width: 1280,
+        height: 720,
+        title: "Oprør",
+        company: "Patch Notes",
+        description: "Online multiplayer Autochess with deck building for PC.",
+        longDescription: "Oprør was an indie online multiplayer auto chess game with deck-building elements, available for Windows and Linux. It featured matches with 8 players competing to dominate the battlefield. The game was planned to be free-to-play and play-to-earn, utilizing NFTs based on the Solana network.",
+        contribution: "I worked on implementing UI and frontend logic in Unity using reactive programming and developed custom Unity editor tools to improve our development workflow. Additionally, I conducted code reviews, reviewed code challenges, and participated in developer interviews.",
+        link: "#opror",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.LINUX],
+        game_links: [GAME_LINKS.WEBSITE],
+        url: ["https://www.opror.io/"],
+    },
+    {
+        imagePath: "/public/Projects/Samurai Fruit/Samurai-fruit-icon.webp",
+        width: 630,
+        height: 500,
+        date: "2023",
+        title: "Samurai Fruit",
+        company: "GameJam — GMTK2023",
+        description: "Addictive arcade game inspired on Fruit Ninja with a unique twist, published for the GMTK 2023 Gamejam.",
+        longDescription: "Samurai Fruit is a fun and addictive game made with Unity, developed in less than 48 hours for the GMTK 2023 Gamejam by a team of two. The game received many positive comments and was played on the event stream by GMTK on Twitch.",
+        contribution: "My main role was implementing the game logic and participating in the gameplay design choices based on the Gamejam theme.",
+        link: "#samurai-fruit",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.WEBGL],
+        game_links: [GAME_LINKS.ITCH_IO],
+        url: ["https://agezma.itch.io/samurai-fruit"],
+    },
+    {
+        imagePath: "/public/Projects/Libraries/OnDemandQueue.webp",
+        width: 2269,
+        height: 1192,
+        date: "2023",
+        title: "OnDemand Queue",
+        company: "C# Library",
+        description: "Powerful and easy to use event queue manager for Unity specialized in executing complex tasks sequences.",
+        longDescription: "OnDemandQueue is a powerful event queue manager for Unity, designed to execute methods and complex task sequences that wait for the previous method to finish (or when you choose!). Inspired by reactive programming, it was developed to meet a specific need for a personal prototype project that year.",
+        contribution: "The original task that compelled me to create this library was performing a custom movement to draw cards to the player's hand, while the server determined when the card was actually created in Unity. Later that year, it was completely refactored, optimized, and extended, resulting in the creation of OnDemandQueue.",
+        link: "#ondemand-queue",
+        platforms: [PLATFORMS.UNITY],
+        game_links: [GAME_LINKS.ITCH_IO, GAME_LINKS.ASSET_STORE],
+        url: ["https://deadlysmile.itch.io/ondemand-queue", "https://assetstore.unity.com/packages/tools/utilities/ondemand-queue-219901"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/a-day-with-arcueid.webp",
+        width: 1024,
+        height: 1024,
+        date: "2020",
+        title: "A Day with Arcueid",
+        company: "Personal project",
+        description: "Visual Novel fanmade based on a TYPE-MOON franchise, avalibe for PC, Web and Android.",
+        longDescription: "A Day with Arcueid is a short parody fangame Visual Novel based on the TYPE-MOON franchise Tsukihime. The game count with unique story progression with 14 different endings (but the end is only a new beggining!).",
+        contribution: "The game was developed in two weeks to test a no-code custom editor tool for creating visual novels in Unity, with a special nod for a friend's birthday. The project received positive feedback from the Latin American fanbase, and a talented artist friend contributed to the credit and icon images. I handled the logic implementation, narrative, and game design, while all graphics, music, and sounds belonged to TYPE-MOON.",
+        link: "#a-day-with-arc",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.MAC, PLATFORMS.LINUX, PLATFORMS.WEBGL, PLATFORMS.ANDROID],
+        game_links: [GAME_LINKS.GITHUB, GAME_LINKS.ITCH_IO],
+        url: ["https://github.com/deadlysmiletm/ADayWithArcueid/tree/master", "https://deadlysmile.itch.io/a-day-with-arcueid"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/elvin.webp",
+        videoPath: "https://user-images.githubusercontent.com/17861865/234936565-561b1058-128e-46eb-8358-3fa52e1678d6.mp4",
+        width: 1920,
+        height: 1080,
+        date: "2019",
+        title: "Elvin",
+        company: "Prototype",
+        description: "End-of-degree metroidvania prototype inspired on Castlevania Synphony of the night.",
+        longDescription: "Elvin was a 2.5D metroidvania game made with Unity 5 as an end-of-degree project at Da Vinci School. It was highly inspired by Castlevania: Symphony of the Night and the graphics of The Last Night.",
+        contribution: "I primarily worked on the character logic implementation, creating a custom physics system to emulate 2D gravity and movement in a 3D environment with extreme ground conditions. Another contribution of mine was the character shader, which supported normal maps, rim lighting, and dynamic shadows.",
+        link: "#elvin",
+        platforms: [PLATFORMS.WINDOWS],
+        game_links: [GAME_LINKS.GITHUB],
+        url: ["https://github.com/deadlysmiletm/Elvin/tree/master"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/dust.webp",
+        width: 1920,
+        height: 1080,
+        date: "2017",
+        title: "DUST",
+        company: "Personal project",
+        description: "Turn-based puzzle game originally developed with Unity 5 for PC as a learning project.",
+        longDescription: "DUST is a turn-based puzzle game inspired by the GO franchise by Square Enix, developed for Android and iOS. It was created within a month while I was studying at Da Vinci School.",
+        contribution: "The selling point, besides recreating the inspirational mechanics, was to avoid any tutorials and teach the player how to play from the very first contact with the game. It was a solo developer project, with sound, music, and some particle effects provided by third parties.",
+        link: "#dust",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.MAC, PLATFORMS.LINUX, PLATFORMS.WEBGL],
+        game_links: [GAME_LINKS.GITHUB, GAME_LINKS.ITCH_IO],
+        url: ["https://github.com/deadlysmiletm/DUST", "https://deadlysmile.itch.io/dust"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/ruin-thief.webp",
+        width: 1534,
+        height: 856,
+        date: "2018",
+        title: "Ruin Thief",
+        company: "GameJam — Da Vinci",
+        description: "Simple local PVP action game for the Da Vinci Gamejam at 2018",
+        longDescription: "Ruin Thief is a game developed for one of the Da Vinci Gamejams in less than 48 hours. Two players compete to see who can earn more points by mining from the ground or stealing from the other player. However, time isn't the only pressure; the arena becomes smaller and smaller until the end of the round!",
+        contribution: "I worked on the programming side of the project, implementing simple hole generation for the arena, so every round was different, and the character logic.",
+        link: "#ruin-thief",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.MAC, PLATFORMS.WEBGL],
+        game_links: [GAME_LINKS.ITCH_IO],
+        url: ["https://deadlysmile.itch.io/ruin-thief"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/cube-escape.webp",
+        width: 1440,
+        height: 810,
+        date: "2017",
+        title: "Cube Escape",
+        company: "Prototype",
+        description: "Local Co-op platformer prototype made with Unity 5.",
+        longDescription: "Cube Escape was a learning prototype with the objective of recreating a local co-op experience with split-screen functionality.",
+        contribution: "Each player has a unique special ability, and both need to cooperate to complete the levels.",
+        link: "#cube-escape",
+        platforms: [PLATFORMS.WINDOWS],
+        game_links: [GAME_LINKS.ITCH_IO],
+        url: ["https://deadlysmile.itch.io/cube-escape"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/limina.webp",
+        width: 1920,
+        height: 1080,
+        date: "2017",
+        title: "Limina",
+        company: "Personal Project",
+        description: "Survival horror inspired by Silent Hill 2 and Another World.",
+        longDescription: "Limina is a 2D platformer survival horror game inspired by titles like Silent Hill and Another World. As my second project using Unity, it was my first time using external APIs like Dragon Bones Pro for the animation system.",
+        contribution: "For this project, I handled all the coding, graphics, and animations.",
+        link: "#limina",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.MAC, PLATFORMS.LINUX, PLATFORMS.WEBGL],
+        game_links: [GAME_LINKS.GITHUB, GAME_LINKS.ITCH_IO],
+        url: ["https://github.com/deadlysmiletm/Limina", "https://deadlysmile.itch.io/limina"],
+    },
+    {
+        imagePath: "/public/Projects/Personal/n01bot.webp",
+        width: 1538,
+        height: 860,
+        date: "2016",
+        title: "N01.BOTs",
+        company: "Prototype",
+        description: "Elevator-action style prototype made with Unity 5.",
+        longDescription: "N01-BOTs is an Elevator Action clone with some additional mechanics. This was my first project using Unity and programming with C#.",
+        contribution: "",
+        link: "#no1-bots",
+        platforms: [PLATFORMS.WINDOWS, PLATFORMS.MAC, PLATFORMS.LINUX, PLATFORMS.WEBGL],
+        game_links: [GAME_LINKS.GITHUB, GAME_LINKS.ITCH_IO],
+        url: ["https://github.com/deadlysmiletm/N01.BOTs", "https://deadlysmile.itch.io/n01bots"],
+    },
+]
+---
+
+<div class="text-center mb-8 lg:mb-10">
+    <h2 class="mb-8 text-4xl tracking-tighter font-bold text-white">
+        Projects
+    </h2>
+    <div class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-14 mt-10 mb-5">
+        {
+            PROJECT.map((project) => (
+                <ProjectCard {...project }/>
+            ))
+        }
+    </div>
+</div>
+<div class="my-20"></div>
+{
+    PROJECT.map(project => (
+        <SectionDivider/>
+        <ProjectArticle {...project}/>
+    ))
+}

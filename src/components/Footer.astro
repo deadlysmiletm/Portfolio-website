@@ -1,0 +1,45 @@
+---
+import GithubIcon from "./Icons/GithubIcon.astro";
+import ItchIoIcon from "./Icons/ItchIoIcon.astro";
+import LinkedInIcon from "./Icons/LinkedInIcon.astro";
+import MailIcon from "./Icons/MailIcon.astro";
+import SketchfabIcon from "./Icons/SketchfabIcon.astro";
+---
+
+<footer class="w-full bg-black/30 border-t-2 border-gray-900/30 shadow-xl shadow-gray-950/40 px-5 transition-all duration-200 ease-in-out hover:shadow-gray-950/80 hover:border-gray-200/30 backdrop-blur-lg">
+    <span class="flex mx-auto mt-5 -mb-5 w-56 h-8 rounded-full bg-gradient-to-tr from-gray-800/80 to-gray-500/80 p-[0.1rem] shadow-lg shadow-black/0 transition-all duration-200 ease-in-out hover:shadow-black/60">
+        <a href=#top class="flex-1 font-sm text-center text-[1rem] text-gray-100/95 bg-gray-950/75 py-[0.1rem] rounded-full transition-all duration-200 ease-in-out hover:bg-black/0 hover:text-black/90 hover:font-bold hover:text-[1.01rem] hover:py-[0.1rem]">Go to Top</a>
+    </span>
+    
+    <div footer-section class="pt-10 pb-5">
+        <span class="block text-sm text-center text-gray-400/90">© 2024. Almost all right reserved. Built with <a href="https://astro.build/" class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-500 to-orange-600">Astro</a> and <a href="https://tailwindcss.com/" class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-500 to-orange-600">Tailwind CSS</a>.</span>
+    </div>
+
+    <ul class="flex flex-row gap-x-5 justify-center mb-10">
+        <li>
+            <a href="https://www.github.com/deadlysmiletm" target="_blank">
+                <GithubIcon/>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/lucasconti/" target="_blank">
+                <LinkedInIcon/>
+            </a>
+        </li>
+        <li>
+            <a href="https://deadlysmile.itch.io/" target="_blank">
+                <ItchIoIcon/>
+            </a>
+        </li>
+        <li>
+            <a href="https://sketchfab.com/deadlysmiletm" target="_blanck">
+                <SketchfabIcon/>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:lucas.leonardo.conti@gmail.com" target="_blank">
+                <MailIcon/>
+            </a>
+        </li>
+    </ul>
+</footer>

@@ -1,0 +1,34 @@
+---
+import CardImage from './CardImage.astro'
+
+interface Props{
+    imagePath: string,
+    title: string,
+    company: string,
+    description: string,
+    link: string,
+    width: number,
+    height: number,
+}
+
+const { title, company, description, imagePath, width, height, link } = Astro.props
+---
+
+<a project-button href={link} class="group w-64 h-64 bg-gray-800 rounded-xl shadow-md duration-500 hover:scale-105 hover:shadow-xl">
+    <div class="absolute flex-initial text-left mt-[11.5rem] z-10 px-5">
+        <p class="w-64 text-black mix-blend-screen border-t-[1px] border-b-[1px] border-x-0 border-red-900/40 bg-gradient-to-r from-rose-500/90 via-red-700/75 to-orange-600/0  font-semibold -ml-5 px-2 uppercase text-sm">{company}</p>
+        <p class="text-2xl font-bold text-gray-100 mix-blend-multiply truncate block capitalize">{title}</p>
+    </div>
+    <!-- Hover view -->
+    <div class="absolute bg-black/0 z-10 w-64 h-64 rounded-xl transition-all duration-200 ease-in-out group-hover:bg-black/60 scale-y-0 group-hover:scale-y-100"></div>
+    <div class="absolute items-center py-2 z-20 transition-all duration-200 ease-in-out opacity-0 group-hover:opacity-100">
+        <p class="text-white text-pretty w-60 px-5 mt-8">{description}</p>
+        <p class="py-3 font-bold">View More</p>
+    </div>
+    <!-- ends hover view -->
+    <CardImage imagePath={imagePath} title={title} width={width} height={height}/>
+    <!-- <script>
+        document.getElementById(Astro.props.title)?.addEventListener('click', );
+
+    </script> -->
+</a>
