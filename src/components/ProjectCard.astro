@@ -20,15 +20,13 @@ const { title, company, description, imagePath, width, height, link } = Astro.pr
         <p class="text-2xl font-bold text-gray-100 mix-blend-multiply truncate block capitalize">{title}</p>
     </div>
     <!-- Hover view -->
-    <div class="absolute bg-black/0 z-10 w-64 h-64 rounded-xl transition-all duration-200 ease-in-out group-hover:bg-black/60 scale-y-0 group-hover:scale-y-100"></div>
+    <div class="absolute bg-black/0 z-10 w-64 h-64 rounded-xl transition-all duration-200 ease-in-out group-hover:bg-black/75 scale-y-0 group-hover:scale-y-100"></div>
     <div class="absolute items-center py-2 z-20 transition-all duration-200 ease-in-out opacity-0 group-hover:opacity-100">
         <p class="text-white text-pretty w-60 px-5 mt-8">{description}</p>
         <p class="py-3 font-bold">View More</p>
     </div>
     <!-- ends hover view -->
-    <CardImage imagePath={imagePath} title={title} width={width} height={height}/>
-    <!-- <script>
-        document.getElementById(Astro.props.title)?.addEventListener('click', );
-
-    </script> -->
+    <div class="blur-0 transition-all duration-200 ease-in-out group-hover:blur-[2px]">
+        <CardImage imagePath={imagePath} title={title} width={width} height={height} loadingType="eager"/>
+    </div>
 </a>

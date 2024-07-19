@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro"
 
-const { title, imagePath, width, height } = Astro.props
+const { title, imagePath, width, height, loadingType } = Astro.props
 ---
 
-<Image src={imagePath} alt={title} loading="lazy" width={width} height={height} class="h-64 w-full object-cover rounded-xl opacity-80"/>
+<Image src={imagePath} alt={title} loading={loadingType} width={width} height={height} class="h-64 w-full object-cover rounded-xl opacity-80"/>

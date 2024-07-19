@@ -1,9 +1,5 @@
 ---
 import CardImage from "./CardImage.astro";
-import GithubIcon from "./Icons/GithubIcon.astro";
-import ItchIoIcon from "./Icons/ItchIoIcon.astro";
-import LinkedInIcon from "./Icons/LinkedInIcon.astro";
-import MailIcon from "./Icons/MailIcon.astro";
 import SectionContainer from "./SectionContainer.astro";
 
 interface Platform {
@@ -54,7 +50,7 @@ const { title, date, company, longDescription, contribution, imagePath, videoPat
                     </div>) :
                     (
                         <div project-cover class="w-[32rem] h-80 mt-10 -mb-16">
-                            <CardImage imagePath={imagePath} title={title} width="32rem" height="20rem"/>
+                            <CardImage imagePath={imagePath} title={title} width="32rem" height="20rem" loadingType="lazy"/>
                         </div>
                     )
             }
