@@ -1,15 +1,21 @@
 ---
 import AndroidIcon from "../components/Icons/AndroidIcon.astro"
-import BrowserIcon from "../components/Icons/BrowserIcon.astro"
-import GithubIcon from "../components/Icons/GithubIcon.astro"
-import ItchIoIcon from "../components/Icons/ItchIoIcon.astro"
 import LinuxIcon from "../components/Icons/LinuxIcon.astro"
 import MacIcon from "../components/Icons/MacIcon.astro"
 import MetaIcon from "../components/Icons/MetaIcon.astro"
 import UnityIcon from "../components/Icons/UnityIcon.astro"
-import UnityInteractableIcon from "../components/Icons/UnityInteractableIcon.astro"
+import PicoIcon from "../components/Icons/PicoPlatformIcon.astro"
 import WebGLIcon from "../components/Icons/WebGLIcon.astro"
 import WindowsIcon from "../components/Icons/WindowsIcon.astro"
+
+import GooglePlayIcon from "../components/Icons/GooglePlayIcon.astro"
+import BrowserIcon from "../components/Icons/BrowserIcon.astro"
+import GithubIcon from "../components/Icons/GithubIcon.astro"
+import ItchIoIcon from "../components/Icons/ItchIoIcon.astro"
+import UnityLinkIcon from "../components/Icons/UnityInteractableIcon.astro"
+import MetaLinkIcon from "../components/Icons/MetaLinkIcon.astro"
+import SteamIcon from "../components/Icons/SteamIcon.astro"
+
 import ProjectArticle from "../components/ProjectArticle.astro"
 import ProjectCard from "../components/ProjectCard.astro"
 import SectionDivider from "../components/SectionDivider.astro"
@@ -42,7 +48,11 @@ const PLATFORMS = {
     UNITY: {
         name: "Unity",
         icon: UnityIcon,
-    }
+    },
+    PICO: {
+        name: "Pico",
+        icon: PicoIcon,
+    },
 }
 
 const GAME_LINKS = {
@@ -60,8 +70,20 @@ const GAME_LINKS = {
     },
     ASSET_STORE: {
         name: "Unity Assetstore",
-        icon: UnityInteractableIcon,
-    }
+        icon: UnityLinkIcon,
+    },
+    STEAM: {
+        name: "Steam",
+        icon: SteamIcon,
+    },
+    META: {
+        name: "Meta Quest",
+        icon: MetaLinkIcon,
+    },
+    ANDROID: {
+        name: "Google Play",
+        icon: GooglePlayIcon,
+    },
 }
 
 
@@ -73,9 +95,9 @@ const PROJECT = [
         height: 357,
         title: "Build Wizard",
         company: "C# Library",
-        description: "Open-source, easy to use Unity Extension tool for build steps automatization.",
-        longDescription: "Build Wizard is an open-source, easy-to-use, and extendable Unity editor tool, still in development. It is optimized for automating the building process and even deploying directly from Unity. Internally, it works with a modular architecture, making it very easy to extend without the need to edit existing code.",
-        contribution: "Originally planned to be sold on the Asset Store, I ultimately decided to make it open-source to showcase my current skills with more recent code.",
+        description: "Open-source, easy to use Unity editor extension for automating build steps. Still in development.",
+        longDescription: "Build Wizard is an open-source and easy to use Unity editor tool for automating the build process and deploying directly from Unity, still in development. Internally it works with a modular architecture, so new build steps can be added without editing the existing code. The open-source version is currently paused, because I was developing a customized edition of it for EGGSCAPE.",
+        contribution: "I originally planned to sell it on the Asset Store, but ultimately decided to make it open-source. Development of this version will resume soon.",
         link: "#build-wizard",
         platforms: [PLATFORMS.UNITY],
         game_links: [GAME_LINKS.GITHUB],
@@ -84,18 +106,18 @@ const PROJECT = [
     {
         imagePath: "/Projects/Eggscape/Eggscape.webp",
         videoPath: "https://www.youtube-nocookie.com/embed/kZ1tN_nLR5w?si=ERG3Rc70Ww2xUpc_",
-        date: "2023 — Today",
+        date: "2023 — 2026",
         width: 1000,
         height: 667,
         title: "EGGSCAPE",
-        company: "3Dar",
-        description: "Online Multiplayer Mixed Reality platformer with a spatial World Building for Meta Quest.",
-        longDescription: "Eggscape is an upcoming online multiplayer Mixed Reality game for the latest Oculus headset. It was presented at GDC 2024 at the Meta booth, with a regular stand for the location-based version in China. This ambitious project has undergone many vision changes but consistently showcases great creativity and a talented team behind it.",
-        contribution: "I worked on implementing various gameplay features and complex systems, refactoring code, backend and frontend programming. I also developed custom Unity editor tools, including a builder tool with automatic Meta channel deployment (adapting a personal tool), and led one of the two developer teams.",
+        company: "Eggscape Entertainment Inc",
+        description: "Online multiplayer Mixed Reality brawler with spatial World Building for XR headsets. Rebuilt as a third-person shooter for Steam.",
+        longDescription: "Eggscape is a free-to-play online multiplayer Mixed Reality brawler for the latest XR headsets. It was presented at GDC 2024 at the Meta booth, and won XR Standout at the Game Changers Awards 2025. Separately, the location-based version of the game runs as a permanent installation in China. It's released on the Meta Store and Google Play, approved to be released soon on the PICO Store, and the Steam version is open for wishlists. This ambitious project has undergone many vision changes, but consistently showcases great creativity and a talented team behind it.",
+        contribution: "I was Port Lead for the PICO and Steam releases, and supported the Android XR port. For Steam I rebuilt the game as a third-person shooter, putting more focus on the chaotic shooting combat the game already had, with new gameplay, quality of life changes and graphic improvements we couldn't bring to the original headset launch because of hardware limitations. On the main version I implemented gameplay features and complex systems, maintained the .NET and TypeScript backend, worked on optimization, refactoring and editor tooling (including adapting a personal tool), and handled part of the migration from the first Fish-Networking implementation to the ECS in Photon Quantum 3, while leading one of the two developer teams.",
         link: "#eggscape",
-        platforms: [PLATFORMS.META],
-        game_links: [GAME_LINKS.WEBSITE],
-        url: ["https://www.eggscape.com/"],
+        platforms: [PLATFORMS.META, PLATFORMS.PICO, PLATFORMS.ANDROID, PLATFORMS.WINDOWS],
+        game_links: [GAME_LINKS.WEBSITE, GAME_LINKS.META, GAME_LINKS.ANDROID, GAME_LINKS.STEAM],
+        url: ["https://www.eggscape.com/", "https://www.meta.com/experiences/eggscape/8895235860528889/", "https://play.google.com/store/apps/details?id=com.ThreeDar.eggscapexr", "https://store.steampowered.com/app/4964860/Eggscape/"],
     },
     {
         imagePath: "/Projects/Opror/OprorLogo.webp",
